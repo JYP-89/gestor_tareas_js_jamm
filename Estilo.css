@@ -1,0 +1,178 @@
+/* ============================================================
+   ESTILO 
+   ============================================================ */
+body {
+    font-family: Arial, sans-serif; /* Fuente limpia y estándar */
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Fondo degradado moderno */
+    display: flex; /* Permite centrar el contenedor principal */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    margin: 0; /* Elimina márgenes por defecto del navegador */
+}
+
+/* ============================================================
+   CONTENEDOR Prnc.
+   ============================================================ */
+.container {
+    background: rgba(255, 255, 255, 0.92); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(12px); /* Efecto de desenfoque tipo glassmorphism */
+    padding: 35px; /* Espaciado interno amplio */
+    width: 430px; /* Ancho fijo para mantener consistencia */
+    border-radius: 14px; /* Bordes redondeados modernos */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25); /* Sombra profunda */
+    animation: fadeIn 0.5s ease; /* Animación al aparecer */
+}
+
+/* Título principal */
+h1 {
+    text-align: center; /* Centrado */
+    margin-bottom: 25px; /* Separación respecto al contenido */
+    font-size: 26px; /* Tamaño destacado */
+    color: #333; /* Color oscuro para buena lectura */
+}
+
+/* ============================================================
+   GRUPO DE INPUT + BOTÓN AÑADIR
+   ------------------------------------------------------------
+   Se usa flexbox para colocar el input y el botón en la misma
+   línea con separación entre ellos.
+   ============================================================ */
+.input-group {
+    display: flex; /* Coloca input y botón en fila */
+    gap: 12px; /* Espacio entre ambos */
+    margin-bottom: 25px; /* Separación respecto a los filtros */
+}
+
+/* Campo de texto donde se escribe la tarea */
+input {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    padding: 12px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde gris claro */
+    font-size: 15px; /* Tamaño de texto cómodo */
+    transition: 0.2s; /* Transición suave para efectos */
+}
+
+/* Efecto visual al hacer foco en el input */
+input:focus {
+    outline: none; /* Elimina borde azul del navegador */
+    border-color: #6a11cb; /* Borde morado al enfocar */
+    box-shadow: 0 0 5px rgba(106,17,203,0.4); /* Resplandor suave */
+}
+
+/* ============================================================
+   ESTILO GENERAL BOTONES
+     ============================================================ */
+button {
+    padding: 10px 14px; /* Tamaño cómodo */
+    cursor: pointer; /* Cursor de mano */
+    background: #2575fc; /* Azul principal */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: 0.2s; /* Animación suave */
+    font-size: 14px; /* Tamaño de texto */
+    font-weight: bold; /* Texto más visible */
+}
+
+/* Efecto hover para botones */
+button:hover {
+    background: #1a5ed8; /* Azul más oscuro al pasar el ratón */
+}
+
+/* ============================================================
+   BOTONES DE FILTRO (Todas / Pendientes / Completadas)
+   ------------------------------------------------------------
+   Se distribuyen en fila y se diferencian del botón principal
+   usando un color morado.
+   ============================================================ */
+.filters {
+    display: flex; /* Coloca los botones en fila */
+    justify-content: space-between; /* Espaciado uniforme */
+    margin-bottom: 20px; /* Separación respecto a la lista */
+}
+
+.filters button {
+    flex: 1; /* Cada botón ocupa el mismo ancho */
+    margin: 0 6px; /* Separación lateral */
+    background: #6a11cb; /* Color morado */
+    border-radius: 6px; /* Bordes redondeados */
+}
+
+.filters button:hover {
+    background: #4d0f9c; /* Morado más oscuro al pasar el ratón */
+}
+
+/* ============================================================
+   LISTA DE TAREAS
+   ------------------------------------------------------------
+   Se eliminan márgenes y padding por defecto para tener un
+   control total del diseño.
+   ============================================================ */
+#taskList {
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada tarea se muestra como una tarjeta */
+li {
+    list-style: none; /* Sin viñetas */
+    padding: 14px; /* Espaciado interno */
+    background: white; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 12px; /* Separación entre tareas */
+    display: flex; /* Texto y botones en fila */
+    justify-content: space-between; /* Separación entre texto y botones */
+    align-items: center; /* Alineación vertical */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12); /* Sombra suave */
+    transition: all 0.25s ease; /* Animación al pasar el ratón */
+}
+
+/* Efecto hover para cada tarea */
+li:hover {
+    transform: translateY(-3px); /* Se eleva ligeramente */
+}
+
+/* Botones dentro de cada tarea */
+li button {
+    margin-left: 6px; /* Separación entre botones */
+    padding: 6px 10px; /* Tamaño más pequeño */
+    font-size: 12px; /* Texto más pequeño */
+    border-radius: 6px; /* Bordes redondeados */
+}
+
+/* ============================================================
+   ESTILO PARA TAREAS COMPLETADAS
+   ------------------------------------------------------------
+   Se aplica un tachado y se reduce la opacidad.
+   ============================================================ */
+.completed {
+    text-decoration: line-through; /* Tachado */
+    color: gray; /* Color apagado */
+    opacity: 0.7; /* Menor intensidad */
+}
+
+/* ============================================================
+   ANIMACIÓN DE ENTRADA
+   ------------------------------------------------------------
+   Animación contenedor principal.
+   ============================================================ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   PIE DE PÁGINA  author
+   ============================================================ */
+.footer {
+    position: fixed; /* Siempre visible */
+    bottom: 15px; /* Separación del borde inferior */
+    left: 0;
+    right: 0;
+    text-align: center; /* Centrado */
+    color: #f0f0f0; /* Texto claro */
+    font-size: 13px; /* Tamaño pequeño */
+    opacity: 0.8; /* Ligera transparencia */
+}

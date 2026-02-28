@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<meta 
+	
+    <!-- pestaña del navegador -->
+    <title>Mi primer CRUD J.Angel M.M</title>
+
+    <!-- Enlace al archivo de estilos -->
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+
+    <!-- Contenedor principal aplicación -->
+    <div class="container">
+        <h1>Gestor de Tareas</h1>
+
+        <!-- Zona para escribir una nueva tarea y añadirla -->
+        <div class="input-group">
+            <!-- Campo de texto de la tarea -->
+            <input type="text" id="taskInput" placeholder="Escribe aquí tu tarea...">
+
+            <!-- Botón para añadir tarea -->
+            <button id="addTaskBtn">Añadir</button>
+        </div>
+
+        <!-- Botones para filtrar las tareas según el estado -->
+        <div class="filters">
+            <!-- data-filter se usa para saber qué filtro aplicar -->
+            <button data-filter="all">Todas</button>
+            <button data-filter="pending">Pendientes</button>
+            <button data-filter="completed">Completadas</button>
+        </div>
+
+        <!-- Lista donde se muestran las tareas -->
+        <ul id="taskList"></ul>
+    </div>
+
+    <!-- Archivo JavaScript con la lógica de la aplicación -->
+    <script src="app.js"></script>
+    <!-- Firma / autor -->
+    <footer class="footer">
+        <p>Aplicación web básica con estructura CRUD y manipulación de datos en entorno local por J.A.M.M</p>
+    </footer>
+</body>
+</html>
